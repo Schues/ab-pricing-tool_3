@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "question": "サイトの目的はなんですか？",
+      "options": [
+        { "id": "A", "label": "ブログ・情報発信", "price": 0 },
+        { "id": "B", "label": "ECサイト（商品販売）", "price": 100000 }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ページ数は何ページですか？",
+      "options": [
+        { "id": "A", "label": "5ページ未満", "price": 50000 },
+        { "id": "B", "label": "10ページ以下", "price": 150000 },
+        { "id": "C", "label": "30ページ以上", "price": 200000 }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "PDFでデザイン確認後の修正のご希望回数？",
+      "options": [
+        { "id": "A", "label": "2回まで", "price": 50000 },
+        { "id": "B", "label": "納得するまで", "price": 200000 }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "サイトの動き（アニメーション）は必要ですか？",
+      "options": [
+        { "id": "A", "label": "必要", "price": 100000 },
+        { "id": "B", "label": "不要", "price": 0 }
+      ]
+    },
+    {
+    "id": 5,
+    "question": "お知らせなどの更新や、お問い合わせフォームは必要ですか？",
+    "options": [
+        { "id": "A", "label": "必要", "price": 50000 },
+        { "id": "B", "label": "不要", "price": 0 }
+    ]
+    },
+    {
+    "id": 6,
+    "question": "ドメイン、サーバーを当社でご準備しますか？",
+    "options": [
+        { "id": "A", "label": "必要", "price": 30000 },
+        { "id": "B", "label": "不要", "price": 0 }
+    ]
+    }
+  ]
+  

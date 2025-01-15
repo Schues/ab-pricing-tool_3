@@ -1,0 +1,23 @@
+body{
+    background-color:black;
+}
+.app{
+    margin-top:50dvh;
+}
+.content{
+
+    text-align: center;
+    h2{
+        font-size: 2rem;
+
+    }
+    .question{
+        font-size:1.8rem;
+        button{
+            margin:1rem;
+            display: inline-block;
+            background-color: gray;
+            padding:.5em 1em;
+        }
+    }
+}
