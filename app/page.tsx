@@ -4,7 +4,6 @@
 
 import { useState } from 'react'
 import questions from './data/questions.json'
-// import styles from '../styles/Question.module.scss'
 
 interface Option {
   id: string;
