@@ -5,13 +5,17 @@
 import { useState } from 'react'
 import questions from './data/questions.json'
 
-interface Option {
-  id: string;
-  label: string;
-  price: number;
-}
+// interface Option {
+//   id: string;
+//   label: string;
+//   price: number;
+// }
 
-
+// interface Question {
+//   id: number;
+//   question: string;
+//   options: Option[];
+// }
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
