@@ -11,11 +11,7 @@ interface Option {
   price: number;
 }
 
-interface Question {
-  id: number;
-  question: string;
-  options: Option[];
-}
+
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
