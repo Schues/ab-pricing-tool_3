@@ -30,8 +30,9 @@ export default function Home() {
 
   return (
     <div className="app">
+      <p>Sakura Insatsu Webteam</p>
       <h1>見積もりシミュレーション</h1>
-      
+      <p>version 2.2</p>
       {currentIndex < questions.length ? (
         <div className="content">
           <h2>{questions[currentIndex].question}</h2>
