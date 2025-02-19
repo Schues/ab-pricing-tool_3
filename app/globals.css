@@ -1,21 +1,46 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  color: black;
+  padding: 5rem;
 }
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.app p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.content {
+  margin-top: 5rem;
+  text-align: center;
+}
+.content h2 {
+  font-size: 1.8rem;
+}
+.content .question {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+.content .question button {
+  color: white;
+  margin: 1rem;
+  display: inline-block;
+  background-color: gray;
+  padding: 0.5em 1em;
+}
+
+button {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 3rem;
+  padding: 1rem;
+}
+
+.summary h2 {
+  font-size: 1.8rem;
+}/*# sourceMappingURL=globals.css.map */
