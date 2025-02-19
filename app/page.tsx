@@ -5,53 +5,70 @@ import questions from "./data/questions.json"
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
-  const [answers, setAnswers] = useState<{ label: string; price: number }[]>([])
+  const [answers, setAnswers] = useState<{ label: string; price: number }[]>(Array(questions.length).fill(null))
 
   const handleOptionSelect = (option: { label: string; price: number }) => {
-    // すでに回答済みの質問には選択できない
-    if (answers.length > currentIndex) return
-
-    setAnswers([...answers, option])
+    const newAnswers = [...answers]
+    newAnswers[currentIndex] = option
+    setAnswers(newAnswers)
     
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1)
     }
   }
 
-  const totalPrice = answers.reduce((sum, item) => sum + item.price, 0)
+  const handleGoBack = () => {
+    if (currentIndex > 0) {
+      const newAnswers = [...answers]
+      newAnswers[currentIndex - 1] = null // 戻ったらその質問の回答を削除
+      setAnswers(newAnswers)
+      setCurrentIndex(currentIndex - 1)
+    }
+  }
+
+  const totalPrice = answers.reduce((sum, item) => sum + (item ? item.price : 0), 0)
 
   return (
     <div className="app">
+      <p>Sakura Instsu Webteam</p>
       <h1>見積もりシミュレーション</h1>
-      
-      {/* 質問セクション */}
+      <p>version 2.02</p>
       {currentIndex < questions.length ? (
         <div className="content">
           <h2>{questions[currentIndex].question}</h2>
-          <div className="question">
-            {questions[currentIndex].options.map((option) => (
-              <button
-                key={option.id}
-                onClick={() => handleOptionSelect(option)}
-                disabled={answers.length > currentIndex} // すでに回答済みなら無効化
-              >
-                {option.label} (¥{option.price.toLocaleString()})
-              </button>
-            ))}
-          </div>
+          {questions[currentIndex].options ? (
+            <div className="question">
+              {questions[currentIndex].options.map((option) => (
+                <button
+                  key={option.id}
+                  onClick={() => handleOptionSelect(option)}
+                >
+                  {option.label} (¥{option.price.toLocaleString()})
+                </button>
+              ))}
+            </div>
+          ) : null}
         </div>
       ) : (
-        <h2>ありがとうございました！</h2>
+        <div>
+          <h2>ありがとうございました！</h2>
+          <p>以上です。</p>
+        </div>
       )}
 
-      {/* 合計金額と選択履歴 */}
+      <button onClick={handleGoBack} disabled={currentIndex === 0}>
+        前の質問に戻る
+      </button>
+
       <div className="summary">
         <h2>現在の合計: ¥{totalPrice.toLocaleString()}</h2>
         <ul>
           {answers.map((answer, index) => (
-            <li key={index}>
-              {questions[index].question}: {answer.label} (¥{answer.price.toLocaleString()})
-            </li>
+            answer ? (
+              <li key={index}>
+                {questions[index].question}: {answer.label} (¥{answer.price.toLocaleString()})
+              </li>
+            ) : null
           ))}
         </ul>
       </div>
