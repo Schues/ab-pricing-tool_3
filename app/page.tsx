@@ -5,7 +5,7 @@ import questions from "./data/questions.json"
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
-  const [answers, setAnswers] = useState<{ label: string; price: number }[]>(Array(questions.length).fill(null))
+  const [answers, setAnswers] = useState<({ label: string; price: number } | null)[]>(Array(questions.length).fill(null))
 
   const handleOptionSelect = (option: { label: string; price: number }) => {
     const newAnswers = [...answers]
@@ -20,7 +20,7 @@ export default function Home() {
   const handleGoBack = () => {
     if (currentIndex > 0) {
       const newAnswers = [...answers]
-      newAnswers[currentIndex - 1] = undefined // 戻ったらその質問の回答を削除
+      newAnswers[currentIndex - 1] = null // 戻ったらその質問の回答を削除
       setAnswers(newAnswers)
       setCurrentIndex(currentIndex - 1)
     }
@@ -30,9 +30,8 @@ export default function Home() {
 
   return (
     <div className="app">
-      <p>Sakura Instsu Webteam</p>
       <h1>見積もりシミュレーション</h1>
-      <p>version 2.02</p>
+      
       {currentIndex < questions.length ? (
         <div className="content">
           <h2>{questions[currentIndex].question}</h2>
