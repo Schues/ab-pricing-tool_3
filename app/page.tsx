@@ -20,7 +20,7 @@ export default function Home() {
   const handleGoBack = () => {
     if (currentIndex > 0) {
       const newAnswers = [...answers]
-      newAnswers[currentIndex - 1] = null // 戻ったらその質問の回答を削除
+      newAnswers[currentIndex - 1] = undefined // 戻ったらその質問の回答を削除
       setAnswers(newAnswers)
       setCurrentIndex(currentIndex - 1)
     }

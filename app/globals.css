@@ -23,7 +23,6 @@ h1 {
   font-size: 1.8rem;
 }
 .content .question {
-  font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 .content .question button {
@@ -32,6 +31,7 @@ h1 {
   display: inline-block;
   background-color: gray;
   padding: 0.5em 1em;
+  font-size: 1.5rem;
 }
 
 button {
